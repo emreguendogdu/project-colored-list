@@ -23,22 +23,12 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100%;
-
-  font-size: 5rem;
 }
 
-.colored-list__item-text {
-  display: block;
+.colored-list {
+  --transition-duration: 0.25s;
   width: 100%;
-  user-select: none;
-
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+  font-size: 5rem;
 }
 
 $colors: (
@@ -52,10 +42,6 @@ $colors: (
   8: #94e1fa,
   9: #a0f238,
 );
-
-.colored-list {
-  --transition-duration: 0.25s;
-}
 
 .colored-list__item {
   position: relative;
@@ -93,5 +79,18 @@ $colors: (
     transform: translateY(0);
     margin-top: 0;
     transition: none;
+  }
+}
+
+.colored-list__item-text {
+  display: block;
+  width: 100%;
+  user-select: none;
+
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
   }
 }
