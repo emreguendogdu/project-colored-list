@@ -1,0 +1,97 @@
+html {
+  font-family: "system-ui", sans-serif;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  font-size: 5rem;
+}
+
+.colored-list__item-text {
+  display: block;
+  width: 100%;
+  user-select: none;
+
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+$colors: (
+  1: #f7a478,
+  2: #e0f134,
+  3: #a9faf6,
+  4: #a541f3,
+  5: #f55f79,
+  6: #f3c234,
+  7: #7289f7,
+  8: #94e1fa,
+  9: #a0f238,
+);
+
+.colored-list {
+  --transition-duration: 0.25s;
+}
+
+.colored-list__item {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+
+  background-color: white;
+  border-top: 1px solid #000;
+
+  margin-top: -0.4em;
+  padding-inline: 16px;
+
+  transform: translateY(0.4em);
+  transition: all var(--transition-duration) ease-in-out;
+
+  @each $index, $color in $colors {
+    &:nth-child(#{$index}) {
+      z-index: $index;
+    }
+
+    &:nth-child(#{$index}).colored-list__item--activated {
+      background-color: $color;
+    }
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &--activated {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    transform: translateY(0);
+    margin-top: 0;
+    transition: none;
+  }
+}

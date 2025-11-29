@@ -1,0 +1,17 @@
+{
+  "name": "project-colored-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "sass index.scss index.css",
+    "watch:css": "sass --watch index.scss index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.80.0"
+  },
+  "devDependencies": {}
+}
